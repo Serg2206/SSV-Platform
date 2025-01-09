@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SSV Platform - Efficient data processing and visualization platform">
+  <meta name="author" content="Serg2206">
+  <meta name="keywords" content="SSV Platform, data analysis, data visualization, modern platform">
+  <meta property="og:title" content="SSV Platform">
+  <meta property="og:description" content="An efficient platform for data processing and visualization.">
+  <meta property="og:image" content="logo.png">
+  <meta property="og:url" content="https://github.com/Serg2206/SSV-Platform">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>SSV Platform</title>
+  
+  <!-- Подключение стилей -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Иконка -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+  <!-- Шапка сайта -->
+  <header class="site-header">
+    <div class="container">
+      <h1>SSV Platform</h1>
+      <p>Efficient Data Processing and Visualization</p>
+    </div>
+  </header>
+
+  <!-- Основной контент -->
+  <main class="main-content">
+    <div class="container">
+      <section class="data-section">
+        <h2>Upload and Analyze Your Data</h2>
+        <form id="data-form">
+          <label for="file-upload">Upload CSV or JSON File:</label>
+          <input type="file" id="file-upload" accept=".csv, .json">
+          <button type="submit">Process Data</button>
+        </form>
+      </section>
+
+      <section class="visualization-section">
+        <h2>Visualization</h2>
+        <div id="chart-container">
+          <!-- Данные будут отображены с помощью JavaScript -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Подвал -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2025 SSV Platform by Serg2206. All rights reserved.</p>
+      <a href="https://github.com/Serg2206/SSV-Platform">GitHub Repository</a>
+    </div>
+  </footer>
+
+  <!-- Подключение JavaScript -->
+  <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+name: Verify Commits
+
+on:
+  push:
+    branches:
+      - '**'           # Для всех веток
+
+jobs:
+  commit-check:
+    name: Check Commit Messages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Verify Signed Commits
+        run: |
+          if [ "$(git log -1 --pretty=%G?)" != "G" ]; then
+            echo "ERROR: Commit is not signed!"
+            exit 1
+          fi

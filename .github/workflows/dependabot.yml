@@ -1,0 +1,15 @@
+name: Dependabot Updates
+
+on:
+  schedule:
+    - cron: '0 2 * * 1' # Запуск по расписанию: каждый понедельник в 2:00
+
+jobs:
+  dependabot:
+    name: Update Dependencies
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Проверка зависимостей через Dependabot
+      - name: Check for Dependency Updates
+        uses: dependabot/fetch-metadata@v1

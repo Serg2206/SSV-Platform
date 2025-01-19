@@ -1,0 +1,37 @@
+name: Security and Code Checks
+
+# Триггеры для запуска workflow
+on:
+  push:                # Запуск при пуше в указанные ветки
+    branches:
+      - main           # Ветка, для которой действует workflow
+  pull_request:         # Запуск при создании или обновлении PR
+    branches:
+      - main
+
+# Описание заданий
+jobs:
+  security-check:
+    name: Run Security and Code Checks
+    runs-on: ubuntu-latest  # Используемая среда
+
+    steps:
+      # 1. Проверка кода
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Установка зависимостей (для Node.js проектов)
+      - name: Install dependencies
+        run: npm ci
+
+      # 3. Запуск тестов
+      - name: Run tests
+        run: npm test
+
+      # 4. Проверка качества кода (например, ESLint)
+      - name: Lint code
+        run: npm run lint
+
+      # 5. Использование Dependabot для анализа зависимостей
+      - name: Dependency Check
+        uses: dependabot/fetch-metadata@v1
